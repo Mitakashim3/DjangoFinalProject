@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>Home</title>{% endblock %}
+{% block content %}
+<h1>Welcome to the Product App</h1>
+<a href="{% url 'product' %}">Add Product</a><br>
+<form method='POST'>
+    {% csrf_token %}
+    <input type="text" value="{{kword}}" name="kword" placeholder="Keyword">
+    <input type="submit" value="Search">
+</form>
+<table>
+    <tr>
+        <th>Actions</th>
+        <th>ID</th>
+        <th>Product Name</th>
+        <th>Amount</th>
+        <th>Product Price</th>
+    </tr>
+    {% for product in products %}
+    <tr>
+        <td>
+            <a href="{% url 'edit' product.id %}?">Edit</a> | 
+        </td>
+        <td>{{ product.id }}</td>
+        <td>{{ product.name }}</td>
+        <td>{{ product.amount }}</td>
+        <td>{{ product.total_price }}</td>
+    </tr>
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}<title>AddProduct</title>{% endblock %}
+{% block content %}
+<h1>Add Product</h1>
+<a href="{% url 'home' %}">Back to Home</a>
+<form method='POST'>
+    {% csrf_token %}
+    <input type="hidden" name="product_id" value="{{product_id}}">
+    <input type="text" name="product_name" placeholder="Product Name">
+    <input type="text" name="amount" placeholder="Amount">
+    <input type="text" name="product_price" placeholder="Product Price">
+    <button type="submit" value="AddProduct">Add Product</button>
+</form>
+{% endblock %}
