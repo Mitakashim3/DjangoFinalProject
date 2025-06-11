@@ -1,0 +1,13 @@
+Computer Name,Brand,Model,Processor,RAM,Storage,Price,Quantity,Is Archived
+Gaming PC Ultimate,ASUS,ROG Strix GT35,Intel Core i9-12900K,32GB DDR4,1TB NVMe SSD,105999.50,3,No
+Business Laptop Pro,Dell,Latitude 5530,Intel Core i7-1265U,16GB DDR4,512GB SSD,72499.50,8,No
+Creative Workstation,HP,Z6 G4,Intel Xeon Silver 4214,64GB DDR4,2TB HDD + 1TB SSD,195499.50,2,No
+Budget Office PC,Lenovo,ThinkCentre M70s,Intel Core i5-10400,8GB DDR4,256GB SSD,39099.50,12,No
+High-End Gaming Rig,MSI,Aegis RS 12,Intel Core i7-12700KF,32GB DDR4,1TB NVMe SSD + 2TB HDD,122899.50,4,No
+Ultrabook Light,ASUS,ZenBook 14,Intel Core i5-1235U,16GB LPDDR5,512GB SSD,50199.50,6,No
+Old Server Machine,Dell,PowerEdge T340,Intel Xeon E-2224,16GB DDR4,1TB HDD,89299.50,1,Yes
+All-in-One Desktop,HP,Pavilion 27,Intel Core i5-1235U,12GB DDR4,512GB SSD,50199.50,5,No
+Student Laptop Basic,Acer,Aspire 5,Intel Core i3-1115G4,8GB DDR4,256GB SSD,28999.00,15,No
+Gaming Laptop Elite,MSI,GF63 Thin,Intel Core i5-11400H,16GB DDR4,512GB SSD,45599.00,7,No
+Mini Desktop PC,Intel,NUC 11,Intel Core i7-1165G7,16GB DDR4,512GB SSD,35799.00,8,No
+

@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Add Computer{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="mb-0">Add New Computer</h3>
+                </div>
+                <div class="card-body">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+                                {{ message }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+
+                    <form method="post" class="needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="computer_name" class="form-label">Computer Name *</label>
+                                <input type="text" class="form-control" id="computer_name" name="computer_name" required>
+                                <div class="invalid-feedback">
+                                    Please provide a computer name.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="brand" class="form-label">Brand *</label>
+                                <input type="text" class="form-control" id="brand" name="brand" required>
+                                <div class="invalid-feedback">
+                                    Please provide a brand.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="model" class="form-label">Model *</label>
+                                <input type="text" class="form-control" id="model" name="model" required>
+                                <div class="invalid-feedback">
+                                    Please provide a model.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="processor" class="form-label">Processor *</label>
+                                <input type="text" class="form-control" id="processor" name="processor" required>
+                                <div class="invalid-feedback">
+                                    Please provide processor information.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="ram" class="form-label">RAM *</label>
+                                <input type="text" class="form-control" id="ram" name="ram" placeholder="e.g., 8GB DDR4" required>
+                                <div class="invalid-feedback">
+                                    Please provide RAM information.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="storage" class="form-label">Storage *</label>
+                                <input type="text" class="form-control" id="storage" name="storage" placeholder="e.g., 512GB SSD" required>
+                                <div class="invalid-feedback">
+                                    Please provide storage information.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="price" class="form-label">Price (₱) *</label>
+                                <input type="number" step="0.01" class="form-control" id="price" name="price" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid price.
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="quantity" class="form-label">Quantity *</label>
+                                <input type="number" class="form-control" id="quantity" name="quantity" min="0" required>
+                                <div class="invalid-feedback">
+                                    Please provide a valid quantity.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a href="{% url 'computer_list' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Back to List
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save"></i> Add Computer
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Bootstrap form validation
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+</script>
+{% endblock %}
